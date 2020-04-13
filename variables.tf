@@ -128,9 +128,9 @@ variable "kms_enable_key_rotation" {
 }
 
 variable "cloudwatch_group_enabled" {
-  description  = "Set to `false` to prevent the module from creating clpudwatch log group"
-  type         = bool
-  default      = false
+  description = "Set to `false` to prevent the module from creating clpudwatch log group"
+  type        = bool
+  default     = false
 }
 
 variable "cloudwatch_retention_in_days" {

@@ -1,5 +1,5 @@
 locals {
-  kms_alias = var.kms_alias == "" ? "alias/${module.label.id}" : var.kms_alias
+  kms_alias   = var.kms_alias == "" ? "alias/${module.label.id}" : var.kms_alias
   kms_enabled = var.kms_enabled || var.bucket_kms_generated ? true : false
 }
 
