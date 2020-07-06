@@ -29,20 +29,20 @@ variable "tags" {
 }
 
 variable "principals" {
-  description = "Map of principal type and a list of ARNs to allow access bucket and kms (e.g. map(`AWS`, list(`arn:aws:iam:::role/admin`)))"
+  description = "Map of principal type and a list of ARNs to allow access bucket and kms (e.g. `map('AWS', list('arn:aws:iam:::role/admin'))`)"
   type        = map(any)
   default     = {}
 }
 
 variable "bucket_enabled" {
-  description = "Set to `false` to prevent the module from creating s3 bucket"
+  description = "Set to `false` to prevent the module from creating S3 bucket"
   type        = bool
   default     = false
 }
 
 variable "bucket_force_destroy" {
   type        = bool
-  description = "(Optional, Default:false ) A boolean that indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. These objects are not recoverable"
+  description = "A boolean that indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. These objects are not recoverable"
   default     = false
 }
 
@@ -87,7 +87,7 @@ variable "bucket_standard_transition_days" {
 }
 
 variable "bucket_enable_glacier_transition" {
-  description = "Glacier transition might just increase your bill. Set to false to disable lifecycle transitions to AWS Glacier."
+  description = "Glacier transition might just increase your bill. Set to false to disable lifecycle transitions to AWS Glacier"
   type        = bool
   default     = false
 }
@@ -134,7 +134,7 @@ variable "kms_enable_key_rotation" {
 }
 
 variable "cloudwatch_group_enabled" {
-  description = "Set to `false` to prevent the module from creating clpudwatch log group"
+  description = "Set to `false` to prevent the module from creating CloudWatch log group"
   type        = bool
   default     = false
 }
