@@ -55,6 +55,7 @@ A terraform module to create AWS Session Manager logs resources.
 | bucket\_lifecycle\_rule\_enabled | Enable lifecycle events on this bucket | `bool` | `false` | no |
 | bucket\_lifecycle\_tags | Tags filter. Used to manage object lifecycle events | `map(string)` | `{}` | no |
 | bucket\_standard\_transition\_days | Number of days to persist in the standard storage tier before moving to the infrequent access tier | `number` | `30` | no |
+| bucket\_versioning\_enabled | A state of versioning. Versioning is a means of keeping multiple variants of an object in the same bucket | `bool` | `false` | no |
 | cloudwatch\_group\_enabled | Set to `false` to prevent the module from creating CloudWatch log group | `bool` | `false` | no |
 | cloudwatch\_retention\_in\_days | Number of days you want to retain log events in the log group | `number` | `30` | no |
 | environment | Environment, e.g. 'prod', 'staging', 'dev', 'pre-prod', 'UAT' | `string` | `""` | no |
