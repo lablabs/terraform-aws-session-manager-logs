@@ -5,7 +5,7 @@ locals {
 
 module "ssm-bucket" {
   source  = "cloudposse/s3-log-storage/aws"
-  version = "0.28.0"
+  version = "0.28.1"
 
   namespace   = module.label.namespace
   environment = module.label.environment
