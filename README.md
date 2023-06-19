@@ -1,12 +1,12 @@
 # AWS Session manager logs Terraform module
 
-[![Labyrinth Labs logo](ll-logo.png)](https://www.lablabs.io)
+[<img src="https://lablabs.io/static/ll-logo.png" width=350px>](https://lablabs.io/)
 
-We help companies build, run, deploy and scale software and infrastructure by embracing the right technologies and principles. Check out our website at https://lablabs.io/
+We help companies build, run, deploy and scale software and infrastructure by embracing the right technologies and principles. Check out our website at <https://lablabs.io/>
 
 ---
 
-![Terraform validation](https://github.com/lablabs/terraform-aws-session-manager-logs/workflows/Terraform%20validation/badge.svg?branch=master)
+![Terraform validate](https://github.com/lablabs/terraform-aws-session-manager-logs/workflows/Terraform%20validation/badge.svg?branch=master)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-success?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 ## Description
