@@ -18,7 +18,7 @@ A terraform module to create AWS Session Manager logs resources.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 2.0 |
 
 ## Modules
@@ -27,7 +27,7 @@ A terraform module to create AWS Session Manager logs resources.
 |------|--------|---------|
 | <a name="module_kms-key"></a> [kms-key](#module\_kms-key) | cloudposse/kms-key/aws | 0.12.1 |
 | <a name="module_label"></a> [label](#module\_label) | cloudposse/label/null | 0.25.0 |
-| <a name="module_ssm-bucket"></a> [ssm-bucket](#module\_ssm-bucket) | cloudposse/s3-log-storage/aws | 0.28.0 |
+| <a name="module_ssm-bucket"></a> [ssm-bucket](#module\_ssm-bucket) | cloudposse/s3-log-storage/aws | 1.4.1 |
 
 ## Resources
 

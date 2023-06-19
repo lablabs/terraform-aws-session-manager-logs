@@ -65,6 +65,7 @@ variable "bucket_lifecycle_rule_enabled" {
 }
 
 variable "bucket_expiration_days" {
+  type        = number
   description = "Number of days after which to expunge the objects"
   default     = 90
 }
@@ -80,7 +81,7 @@ variable "bucket_lifecycle_tags" {
   type        = map(string)
   default     = {}
 }
-
+# tflint-ignore: terraform_unused_declarations
 variable "bucket_enable_standard_transition" {
   type        = bool
   default     = false
@@ -88,6 +89,7 @@ variable "bucket_enable_standard_transition" {
 }
 
 variable "bucket_standard_transition_days" {
+  type        = number
   description = "Number of days to persist in the standard storage tier before moving to the infrequent access tier"
   default     = 30
 }
@@ -99,6 +101,7 @@ variable "bucket_enable_glacier_transition" {
 }
 
 variable "bucket_glacier_transition_days" {
+  type        = number
   description = "Number of days after which to move the data to the glacier storage tier"
   default     = 60
 }
@@ -133,6 +136,7 @@ variable "kms_alias" {
   default     = ""
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "kms_enable_key_rotation" {
   description = "Specifies whether key rotation is enabled"
   type        = bool
@@ -145,7 +149,9 @@ variable "cloudwatch_group_enabled" {
   default     = false
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "cloudwatch_retention_in_days" {
+  type        = number
   description = "Number of days you want to retain log events in the log group"
   default     = 30
 }
