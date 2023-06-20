@@ -58,52 +58,10 @@ variable "bucket_acl" {
   default     = "log-delivery-write"
 }
 
-variable "bucket_lifecycle_rule_enabled" {
-  description = "Enable lifecycle events on this bucket"
-  type        = bool
-  default     = false
-}
-
-variable "bucket_expiration_days" {
-  type        = number
-  description = "Number of days after which to expunge the objects"
-  default     = 90
-}
-
-variable "bucket_lifecycle_prefix" {
-  type        = string
-  description = "Prefix filter. Used to manage object lifecycle events"
-  default     = ""
-}
-
-variable "bucket_lifecycle_tags" {
-  description = "Tags filter. Used to manage object lifecycle events"
-  type        = map(string)
-  default     = {}
-}
-# tflint-ignore: terraform_unused_declarations
-variable "bucket_enable_standard_transition" {
-  type        = bool
-  default     = false
-  description = "Enables the transition to AWS STANDARD IA"
-}
-
-variable "bucket_standard_transition_days" {
-  type        = number
-  description = "Number of days to persist in the standard storage tier before moving to the infrequent access tier"
-  default     = 30
-}
-
-variable "bucket_enable_glacier_transition" {
-  description = "Glacier transition might just increase your bill. Set to false to disable lifecycle transitions to AWS Glacier"
-  type        = bool
-  default     = false
-}
-
-variable "bucket_glacier_transition_days" {
-  type        = number
-  description = "Number of days after which to move the data to the glacier storage tier"
-  default     = 60
+variable "bucket_lifecycle_configuration_rules" { # New stuff
+  type        = list(any)
+  description = "Lifecycle configuration rules"
+  default     = []
 }
 
 variable "bucket_kms_generated" {
@@ -134,13 +92,6 @@ variable "kms_alias" {
   description = "The display name of the alias. The name must start with the word `alias` followed by a forward slash, leave default for auto generated alias"
   type        = string
   default     = ""
-}
-
-# tflint-ignore: terraform_unused_declarations
-variable "kms_enable_key_rotation" {
-  description = "Specifies whether key rotation is enabled"
-  type        = bool
-  default     = false
 }
 
 variable "cloudwatch_group_enabled" {
