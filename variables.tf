@@ -100,7 +100,6 @@ variable "cloudwatch_group_enabled" {
   default     = false
 }
 
-# tflint-ignore: terraform_unused_declarations
 variable "cloudwatch_retention_in_days" {
   type        = number
   description = "Number of days you want to retain log events in the log group"
