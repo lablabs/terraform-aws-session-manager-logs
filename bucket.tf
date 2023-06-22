@@ -5,7 +5,7 @@ locals {
 
 module "ssm-bucket" {
   source  = "cloudposse/s3-log-storage/aws"
-  version = "0.28.1"
+  version = "1.4.1"
 
   namespace   = module.label.namespace
   environment = module.label.environment
@@ -13,21 +13,15 @@ module "ssm-bucket" {
   attributes  = module.label.attributes
   tags        = module.label.tags
 
-  enabled                   = var.bucket_enabled
-  force_destroy             = var.bucket_force_destroy
-  policy                    = data.aws_iam_policy_document.bucket.json
-  acl                       = var.bucket_acl
-  sse_algorithm             = local.sse_algorithm
-  kms_master_key_arn        = local.kms_master_key_arn
-  lifecycle_rule_enabled    = var.bucket_lifecycle_rule_enabled
-  expiration_days           = var.bucket_expiration_days
-  lifecycle_prefix          = var.bucket_lifecycle_prefix
-  lifecycle_tags            = var.bucket_lifecycle_tags
-  standard_transition_days  = var.bucket_standard_transition_days
-  enable_glacier_transition = var.bucket_enable_glacier_transition
-  glacier_transition_days   = var.bucket_glacier_transition_days
-  versioning_enabled        = var.bucket_versioning_enabled
+  enabled            = var.bucket_enabled
+  force_destroy      = var.bucket_force_destroy
+  acl                = var.bucket_acl
+  sse_algorithm      = local.sse_algorithm
+  kms_master_key_arn = local.kms_master_key_arn
+  versioning_enabled = var.bucket_versioning_enabled
 
+  source_policy_documents       = [data.aws_iam_policy_document.bucket.json]
+  lifecycle_configuration_rules = var.bucket_lifecycle_configuration_rules
 }
 
 data "aws_iam_policy_document" "bucket" {

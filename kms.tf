@@ -77,5 +77,5 @@ module "kms-key" {
   enabled     = local.kms_enabled
   description = var.kms_description
   alias       = local.kms_alias
-  policy      = join("", data.aws_iam_policy_document.kms.*.json)
+  policy      = join("", data.aws_iam_policy_document.kms[*].json)
 }

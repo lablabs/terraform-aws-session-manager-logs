@@ -35,22 +35,22 @@ output "kms_key_alias_arn" {
 
 output "cloudwatch_group_name" {
   description = "Session manager cloudwatch log group name"
-  value       = element(concat(aws_cloudwatch_log_group.ssm.*.name, [""]), 0)
+  value       = element(concat(aws_cloudwatch_log_group.ssm[*].name, [""]), 0)
 }
 
 output "cloudwatch_group_arn" {
   description = "Session manager cloudwatch log group arn"
-  value       = element(concat(aws_cloudwatch_log_group.ssm.*.arn, [""]), 0)
+  value       = element(concat(aws_cloudwatch_log_group.ssm[*].arn, [""]), 0)
 }
 
 output "cloudwatch_group_retention_in_days" {
   description = "Session manager cloudwatch log group retention days"
-  value       = element(concat(aws_cloudwatch_log_group.ssm.*.retention_in_days, [""]), 0)
+  value       = element(concat(aws_cloudwatch_log_group.ssm[*].retention_in_days, [""]), 0)
 }
 
 output "cloudwatch_group_kms_key_id" {
   description = "Session manager cloudwatch log group kms key id"
-  value       = element(concat(aws_cloudwatch_log_group.ssm.*.kms_key_id, [""]), 0)
+  value       = element(concat(aws_cloudwatch_log_group.ssm[*].kms_key_id, [""]), 0)
 }
 
 output "policy_document" {
